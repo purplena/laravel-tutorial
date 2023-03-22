@@ -17,13 +17,9 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
-        $category = implode('', $this->faker->words(3));
-        $slug = implode('-', $this->faker->words(2));
-
         return [
-            'name' => $category,
-            'slug' => $slug,
-            // 'slug' => Str::slug($category),
+            'name' => $this->faker->unique()->word(),
+            'slug' => $this->faker->unique()->slug()
         ];
     }
 }

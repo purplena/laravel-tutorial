@@ -43,10 +43,12 @@ class Post extends Model
         });
     }
 
-
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
     public function category()
     {
-        // dd($this->belongsTo(Category::class));
         return $this->belongsTo(Category::class);
     }
 
