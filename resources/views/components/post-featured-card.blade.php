@@ -4,15 +4,16 @@
     <div class="py-6 px-5 lg:flex">
         {{-- Image --}}
         <div class="flex-1 lg:mr-8">
-            <img src="/images/illustration-1.png" alt="Illustration" class="rounded-xl" />
+            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Illustration" class="rounded-xl" />
         </div>
         <div class="flex-1 flex flex-col justify-between">
             <header class="mt-8 lg:mt-0">
                 <div class="space-x-2">
                     {{-- Category and link to see all the posts of the category --}}
-                    <a href="/categories/{{ $post->category->slug }}"
+                    {{-- <a href="/categories/{{ $post->category->slug }}"
                         class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 uppercase font-semibold"
-                        style="font-size: 10px">{{ $post->category->name }}</a>
+                        style="font-size: 10px">{{ $post->category->name }}</a> --}}
+                    <x-category-button :category="$post->category" />
                 </div>
 
                 <div class="mt-4">

@@ -3,7 +3,7 @@
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10 pt-10">
             <!-- Sidebar -->
             <div class="col-span-4">
-                <img src="/images/illustration-1.png" alt="illustration" class="rounded-xl" />
+                <img src="{{ asset('storage/' . $post->thumbnail) }}" class="rounded-xl" />
                 <p class="mt-4 block text-gray-400 text-xs text-center">
                     Published <time>{{ $post->created_at->diffForHumans() }}</time>
                 </p>
